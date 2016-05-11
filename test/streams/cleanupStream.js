@@ -32,6 +32,54 @@ tape( 'cleanupStream trims whitespace from all fields', function(test) {
   });
 });
 
+tape( 'leading 0\'s in ordinals should be removed', function(test) {
+  var inputs = [
+    {
+      NUMBER: '123',
+      STREET: '01st st'
+    },
+    {
+      NUMBER: '123',
+      STREET: '002st st'
+    },
+    {
+      NUMBER: '123',
+      STREET: '0003rd st'
+    },
+    {
+      NUMBER: '123',
+      STREET: '00004th st'
+    }
+  ];
+
+  var expecteds = [
+    {
+      NUMBER: '123',
+      STREET: '1st st'
+    },
+    {
+      NUMBER: '123',
+      STREET: '2st st'
+    },
+    {
+      NUMBER: '123',
+      STREET: '3rd st'
+    },
+    {
+      NUMBER: '123',
+      STREET: '4th st'
+    }
+  ];
+
+  var cleanupStream = CleanupStream.create();
+
+  test_stream(inputs, cleanupStream, function(err, actual) {
+    test.deepEqual(actual, expecteds, 'leading 0\'s should have been trimmed from STREET tokens');
+    test.end();
+  });
+
+});
+
 tape( 'cleanupStream trims leading 0\'s from house numbers', function(test) {
   var inputs = [
     {
