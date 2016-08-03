@@ -70,12 +70,12 @@ hash. A sample configuration file might look like:
 
 ```javascript
 {
-	"imports": {
-		"openaddresses": {
-			"datapath": "/tmp/oa-data",
-			"files": ["us/ny/city_of_new_york.csv"]
-		}
-	}
+    "imports": {
+        "openaddresses": {
+            "datapath": "/tmp/oa-data",
+                        "files": ["us/ny/city_of_new_york.csv"]
+        }
+    }
 }
 ```
 
