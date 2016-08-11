@@ -1,24 +1,23 @@
 {
   "name": "pelias-openaddresses",
-  "version": "2.1.0",
+  "version": "0.0.0-semantic-release",
   "description": "Pelias import pipeline for OpenAddresses.",
   "main": "import.js",
   "dependencies": {
     "combined-stream": "1.0.5",
-    "csv-parse": "1.1.0",
+    "csv-parse": "^1.1.7",
     "glob": "^7.0.0",
     "lodash": "^4.10.0",
     "minimist": "1.2.0",
-    "pelias-address-deduplicator": "^1.x.x",
-    "pelias-config": ">=1.0.0",
-    "pelias-dbclient": "^1.0.0",
-    "pelias-logger": "^0.x.x",
-    "pelias-model": "4.0.0",
-    "pelias-wof-admin-lookup": "^2.0.0",
+    "pelias-address-deduplicator": "1.1.0",
+    "pelias-config": "2.1.0",
+    "pelias-dbclient": "2.0.0",
+    "pelias-logger": "0.0.8",
+    "pelias-model": "4.1.0",
+    "pelias-wof-admin-lookup": "2.1.0",
     "through2": "2.0.1",
     "through2-filter": "^2.0.0",
-    "through2-map": "^2.0.0",
-    "string-hash": "^1.1.0"
+    "through2-map": "^2.0.0"
   },
   "devDependencies": {
     "deep-diff": "^0.3.3",
@@ -27,7 +26,8 @@
     "precommit-hook": "3.0.0",
     "tap-spec": "4.1.1",
     "tape": "^4.5.0",
-    "temp": "^0.8.3"
+    "temp": "^0.8.3",
+    "semantic-release": "^4.3.5"
   },
   "scripts": {
     "import": "node import.js",
@@ -35,7 +35,11 @@
     "test": "npm run units",
     "units": "node test/test.js | tap-spec",
     "functional": "node test/functional.js | tap-spec",
-    "lint": "jshint ."
+    "lint": "jshint .",
+    "validate": "npm ls",
+    "travis": "npm run test && npm run functional",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "start": "node import.js"
   },
   "repository": {
     "type": "git",
