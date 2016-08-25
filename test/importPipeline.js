@@ -56,6 +56,9 @@ tape('functional test of importing two small OA files', function(t) {
 
     var diff = deep(expected, results);
 
+    console.log(JSON.stringify(expected));
+    console.log(JSON.stringify(results));
+
     if (diff) {
       t.fail('expected and actual output are the same');
       console.log(diff);
@@ -64,7 +67,13 @@ tape('functional test of importing two small OA files', function(t) {
     }
     t.end();
   });
+  var streams = { deduplicatorStream: deduplicatorStream,
+                  adminLookupStream: adminLookupStream,
+                  finalStream: endStream
+                };
 
-  importPipeline.create(inputFiles, basePath, deduplicatorStream, adminLookupStream, endStream);
+  var opts = { dirPath: basePath };
+
+  importPipeline.create(inputFiles, opts, streams);
 
 });

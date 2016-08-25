@@ -2,7 +2,7 @@
   {
     "_index": "pelias",
     "_type": "address",
-    "_id": "data/input_file_1:0",
+    "_id": "data/input_file_1:GOOD RECORD",
     "data": {
       "name": {
         "default": "100 Main St"
@@ -50,13 +50,13 @@
       },
       "source": "openaddresses",
       "layer": "address",
-      "source_id": "data/input_file_1:0"
+      "source_id": "data/input_file_1:good record"
     }
   },
   {
     "_index": "pelias",
     "_type": "address",
-    "_id": "data/input_file_1:1",
+    "_id": "data/input_file_1:GOOD RECORD WITH FIELD TRIMMING",
     "data": {
       "name": {
         "default": "200 Main St"
@@ -75,13 +75,13 @@
       },
       "source": "openaddresses",
       "layer": "address",
-      "source_id": "data/input_file_1:1"
+      "source_id": "data/input_file_1:good record with field trimming"
     }
   },
   {
     "_index": "pelias",
     "_type": "address",
-    "_id": "data/input_file_1:4",
+    "_id": "data/input_file_1:REMOVES LEADING ZEROES",
     "data": {
       "name": {
         "default": "300 Main St"
@@ -100,13 +100,13 @@
       },
       "source": "openaddresses",
       "layer": "address",
-      "source_id": "data/input_file_1:4"
+      "source_id": "data/input_file_1:removes leading zeroes"
     }
   },
   {
     "_index": "pelias",
     "_type": "address",
-    "_id": "data/input_file_2:0",
+    "_id": "data/input_file_2:GOOD RECORD",
     "data": {
       "name": {
         "default": "400 Vireo Rd"
@@ -125,13 +125,13 @@
       },
       "source": "openaddresses",
       "layer": "address",
-      "source_id": "data/input_file_2:0"
+      "source_id": "data/input_file_2:good record"
     }
   },
   {
     "_index": "pelias",
     "_type": "address",
-    "_id": "data/input_file_2:2",
+    "_id": "data/input_file_2:REMOVES LEADING ZEROES",
     "data": {
       "name": {
         "default": "500 Calle De Lago"
@@ -150,7 +150,7 @@
       },
       "source": "openaddresses",
       "layer": "address",
-      "source_id": "data/input_file_2:2"
+      "source_id": "data/input_file_2:removes leading zeroes"
     }
   }
 ]
