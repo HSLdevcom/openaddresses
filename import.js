@@ -38,8 +38,9 @@ if( 'exitCode' in args ){
 
   var files = parameters.getFileList(peliasConfig, args);
 
-  var deduplicator = deduplicatorStream.create(peliasConfig, addressDeduplicator);
-  var adminLookup = adminLookupStream.create(peliasConfig, wofAdminLookup);
+  var streams = { deduplicatorStream: deduplicatorStream.create(peliasConfig, addressDeduplicator),
+                  adminLookupStream: adminLookupStream.create(peliasConfig, wofAdminLookup)
+                };
 
-  importPipeline.create( files, args, deduplicator, adminLookup );
+  importPipeline.create( files, args, streams );
 }
