@@ -112,7 +112,7 @@ tape ( 'cleanupStream trims white space in street field', function(test){
     }];
     var expecteds = [{
       NUMBER: '88',
-      STREET: 'Glasgow Street'
+      STREET: 'Glasgow street'
     },
     {
       NUMBER: '76',
@@ -124,7 +124,7 @@ tape ( 'cleanupStream trims white space in street field', function(test){
     },
     {
       NUMBER: '314',
-      STREET: 'Timid Street' //should capitalize first letter of each word
+      STREET: 'Timid street' //should capitalize first letter of each word
     },
     {
       NUMBER: '4',
