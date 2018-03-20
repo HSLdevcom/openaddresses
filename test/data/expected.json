@@ -131,14 +131,14 @@
     "_id": "data/input_file_2:REMOVES LEADING ZEROES",
     "data": {
       "name": {
-        "default": "500 Calle De Lago"
+        "default": "500 Calle de Lago"
       },
       "phrase": {
-        "default": "500 Calle De Lago"
+        "default": "500 Calle de Lago"
       },
       "address_parts": {
         "number": "500",
-        "street": "Calle De Lago"
+        "street": "Calle de Lago"
       },
       "center_point": {
         "lon": 91.919191,
