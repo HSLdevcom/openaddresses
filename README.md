@@ -6,7 +6,7 @@ This repository is part of the [Pelias](https://github.com/pelias/pelias)
 project. Pelias is an open-source, open-data geocoder built by
 [Mapzen](https://www.mapzen.com/) that also powers [Mapzen Search](https://mapzen.com/projects/search). Our
 official user documentation is [here](https://mapzen.com/documentation/search/).
-[![Build Status](https://travis-ci.org/pelias/openaddresses.svg?branch=master)](https://travis-ci.org/pelias/openaddresses)
+[![Build Status](https://travis-ci.com/pelias/openaddresses.svg?branch=master)](https://travis-ci.com/pelias/openaddresses)
 
 ## Overview
 
