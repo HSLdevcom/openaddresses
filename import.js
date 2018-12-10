@@ -1,3 +1,4 @@
+
 /**
  * @file Entry-point script for the OpenAddresses import pipeline.
  */
@@ -12,10 +13,6 @@ var parameters = require( './lib/parameters' );
 var importPipeline = require( './lib/importPipeline' );
 
 const adminLookupStream = require('pelias-wof-admin-lookup');
-var deduplicatorStream = require('./lib/streams/deduplicatorStream');
-
-var addressDeduplicator = require('pelias-address-deduplicator');
-
 
 // Pretty-print the total time the import took.
 function startTiming() {
@@ -30,6 +27,12 @@ function startTiming() {
 
 var args = parameters.interpretUserArgs( process.argv.slice( 2 ) );
 
+/*
+const adminLayers = ['neighbourhood', 'borough', 'locality', 'localadmin',
+  'county', 'macrocounty', 'region', 'macroregion', 'dependency', 'country',
+  'empire', 'continent'];
+*/
+
 if( 'exitCode' in args ){
   ((args.exitCode > 0) ? console.error : console.info)( args.errMessage );
   process.exit( args.exitCode );
@@ -42,10 +45,5 @@ if( 'exitCode' in args ){
   }
 
   var files = parameters.getFileList(peliasConfig, args);
-
-  var streams = { deduplicatorStream: deduplicatorStream.create(peliasConfig, addressDeduplicator),
-                  adminLookupStream: adminLookupStream.create()
-                };
-
-  importPipeline.create( files, args, streams );
+  importPipeline.create( files, args, adminLookupStream.create() );
 }

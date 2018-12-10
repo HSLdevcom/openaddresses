@@ -4,7 +4,7 @@ const child_process = require('child_process');
 const async = require('async');
 const fs = require('fs-extra');
 const tmp = require('tmp');
-const logger = require('pelias-logger').get('download');
+const logger = require('pelias-logger').get('openaddresses-download');
 
 function downloadAll(config, callback) {
   logger.info('Attempting to download all data');
@@ -22,9 +22,8 @@ function downloadAll(config, callback) {
         // all non-share-alike data
         'https://s3.amazonaws.com/data.openaddresses.io/openaddr-collected-global.zip',
 
-        // leave this out for now since we don't download it in production currently
         // all share-alike data
-        // 'https://s3.amazonaws.com/data.openaddresses.io/openaddr-collected-global-sa.zip'
+        'https://s3.amazonaws.com/data.openaddresses.io/openaddr-collected-global-sa.zip'
       ],
       downloadBundle.bind(null, targetDir),
       callback);

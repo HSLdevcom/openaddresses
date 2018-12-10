@@ -2,7 +2,7 @@
   {
     "_index": "pelias",
     "_type": "address",
-    "_id": "data/input_file_1:GOOD RECORD",
+    "_id": "data/input_file_1:0",
     "data": {
       "name": {
         "default": "100 Main St"
@@ -11,33 +11,87 @@
         "default": "100 Main St"
       },
       "parent": {
-        "country": [ "override country" ],
-        "country_id": [ "1" ],
-        "country_a": [ null ],
-        "macroregion": [ "override macroregion" ],
-        "macroregion_id": [ "2" ],
-        "macroregion_a": [ null ],
-        "region": [ "override region" ],
-        "region_id": [ "3" ],
-        "region_a": [ null ],
-        "macrocounty": [ "override macrocounty" ],
-        "macrocounty_id": [ "4" ],
-        "macrocounty_a": [ null ],
-        "county": [ "override county" ],
-        "county_id": [ "5" ],
-        "county_a": [ null ],
-        "borough": [ "override borough" ],
-        "borough_id": [ "6" ],
-        "borough_a": [ null ],
-        "locality": [ "override locality" ],
-        "locality_id": [ "7" ],
-        "locality_a": [ null ],
-        "localadmin": [ "override localadmin" ],
-        "localadmin_id": [ "8" ],
-        "localadmin_a": [ null ],
-        "neighbourhood": [ "override neighbourhood" ],
-        "neighbourhood_id": [ "9" ],
-        "neighbourhood_a": [ null ]
+        "country": [
+          "override country"
+        ],
+        "country_id": [
+          "1"
+        ],
+        "country_a": [
+          null
+        ],
+        "macroregion": [
+          "override macroregion"
+        ],
+        "macroregion_id": [
+          "2"
+        ],
+        "macroregion_a": [
+          null
+        ],
+        "region": [
+          "override region"
+        ],
+        "region_id": [
+          "3"
+        ],
+        "region_a": [
+          null
+        ],
+        "macrocounty": [
+          "override macrocounty"
+        ],
+        "macrocounty_id": [
+          "4"
+        ],
+        "macrocounty_a": [
+          null
+        ],
+        "county": [
+          "override county"
+        ],
+        "county_id": [
+          "5"
+        ],
+        "county_a": [
+          null
+        ],
+        "borough": [
+          "override borough"
+        ],
+        "borough_id": [
+          "6"
+        ],
+        "borough_a": [
+          null
+        ],
+        "locality": [
+          "override locality"
+        ],
+        "locality_id": [
+          "7"
+        ],
+        "locality_a": [
+          null
+        ],
+        "localadmin": [
+          "override localadmin"
+        ],
+        "localadmin_id": [
+          "8"
+        ],
+        "localadmin_a": [
+          null
+        ],
+        "neighbourhood": [
+          "override neighbourhood"
+        ],
+        "neighbourhood_id": [
+          "9"
+        ],
+        "neighbourhood_a": [
+          null
+        ]
       },
       "address_parts": {
         "number": "100",
@@ -50,13 +104,13 @@
       },
       "source": "openaddresses",
       "layer": "address",
-      "source_id": "data/input_file_1:good record"
+      "source_id": "data/input_file_1:0"
     }
   },
   {
     "_index": "pelias",
     "_type": "address",
-    "_id": "data/input_file_1:GOOD RECORD WITH FIELD TRIMMING",
+    "_id": "data/input_file_1:1",
     "data": {
       "name": {
         "default": "200 Main St"
@@ -74,22 +128,70 @@
       },
       "source": "openaddresses",
       "layer": "address",
-      "source_id": "data/input_file_1:good record with field trimming"
+      "source_id": "data/input_file_1:1"
     }
   },
   {
     "_index": "pelias",
     "_type": "address",
-    "_id": "data/input_file_1:REMOVES LEADING ZEROES",
+    "_id": "data/input_file_1:2",
     "data": {
       "name": {
-        "default": "300 Main St"
+        "default": "0 Main St"
       },
       "phrase": {
-        "default": "300 Main St"
+        "default": "0 Main St"
       },
       "address_parts": {
-        "number": "300",
+        "number": "0",
+        "street": "Main St"
+      },
+      "center_point": {
+        "lon": 41.414141,
+        "lat": 14.141414
+      },
+      "source": "openaddresses",
+      "layer": "address",
+      "source_id": "data/input_file_1:2"
+    }
+  },
+  {
+    "_index": "pelias",
+    "_type": "address",
+    "_id": "data/input_file_1:3",
+    "data": {
+      "name": {
+        "default": "00 Elm St"
+      },
+      "phrase": {
+        "default": "00 Elm St"
+      },
+      "address_parts": {
+        "number": "00",
+        "street": "Elm St"
+      },
+      "center_point": {
+        "lon": 51.515151,
+        "lat": 15.151515
+      },
+      "source": "openaddresses",
+      "layer": "address",
+      "source_id": "data/input_file_1:3"
+    }
+  },
+  {
+    "_index": "pelias",
+    "_type": "address",
+    "_id": "data/input_file_1:4",
+    "data": {
+      "name": {
+        "default": "00300 Main St"
+      },
+      "phrase": {
+        "default": "00300 Main St"
+      },
+      "address_parts": {
+        "number": "00300",
         "street": "Main St"
       },
       "center_point": {
@@ -98,13 +200,13 @@
       },
       "source": "openaddresses",
       "layer": "address",
-      "source_id": "data/input_file_1:removes leading zeroes"
+      "source_id": "data/input_file_1:4"
     }
   },
   {
     "_index": "pelias",
     "_type": "address",
-    "_id": "data/input_file_2:GOOD RECORD",
+    "_id": "data/input_file_2:0",
     "data": {
       "name": {
         "default": "400 Vireo Rd"
@@ -122,23 +224,47 @@
       },
       "source": "openaddresses",
       "layer": "address",
-      "source_id": "data/input_file_2:good record"
+      "source_id": "data/input_file_2:0"
     }
   },
   {
     "_index": "pelias",
     "_type": "address",
-    "_id": "data/input_file_2:REMOVES LEADING ZEROES",
+    "_id": "data/input_file_2:1",
     "data": {
       "name": {
-        "default": "500 Calle de Lago"
+        "default": "00000 Vireo Rd"
       },
       "phrase": {
-        "default": "500 Calle de Lago"
+        "default": "00000 Vireo Rd"
       },
       "address_parts": {
-        "number": "500",
-        "street": "Calle de Lago"
+        "number": "00000",
+        "street": "Vireo Rd"
+      },
+      "center_point": {
+        "lon": 81.818181,
+        "lat": 18.181818
+      },
+      "source": "openaddresses",
+      "layer": "address",
+      "source_id": "data/input_file_2:1"
+    }
+  },
+  {
+    "_index": "pelias",
+    "_type": "address",
+    "_id": "data/input_file_2:2",
+    "data": {
+      "name": {
+        "default": "00500 Calle De Lago"
+      },
+      "phrase": {
+        "default": "00500 Calle De Lago"
+      },
+      "address_parts": {
+        "number": "00500",
+        "street": "Calle De Lago"
       },
       "center_point": {
         "lon": 91.919191,
@@ -146,7 +272,31 @@
       },
       "source": "openaddresses",
       "layer": "address",
-      "source_id": "data/input_file_2:removes leading zeroes"
+      "source_id": "data/input_file_2:2"
+    }
+  },
+  {
+    "_index": "pelias",
+    "_type": "address",
+    "_id": "data/input_file_2:3",
+    "data": {
+      "name": {
+        "default": "00500 Calle De Lago"
+      },
+      "phrase": {
+        "default": "00500 Calle De Lago"
+      },
+      "address_parts": {
+        "number": "00500",
+        "street": "Calle De Lago"
+      },
+      "center_point": {
+        "lon": 92.929292,
+        "lat": 29.292929
+      },
+      "source": "openaddresses",
+      "layer": "address",
+      "source_id": "data/input_file_2:3"
     }
   }
 ]
