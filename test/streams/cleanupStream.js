@@ -32,7 +32,7 @@ tape( 'cleanupStream trims whitespace from all fields', function(test) {
   });
 });
 
-tape( 'cleanupStream trims leading 0\'s from house numbers', function(test) {
+tape( 'cleanupStream does NOT trim leading 0\'s from house numbers', function(test) {
   var inputs = [
     {
       NUMBER: ' 0030 ',
@@ -50,11 +50,11 @@ tape( 'cleanupStream trims leading 0\'s from house numbers', function(test) {
 
   var expecteds = [
     {
-      NUMBER: '30',
+      NUMBER: '0030',
       STREET: 'Street'
     },
     {
-      NUMBER: '34560',
+      NUMBER: '0034560',
       STREET: 'Street'
     },
     {
@@ -66,7 +66,7 @@ tape( 'cleanupStream trims leading 0\'s from house numbers', function(test) {
   var cleanupStream = CleanupStream.create();
 
   test_stream(inputs, cleanupStream, function(err, actual) {
-    test.deepEqual(actual, expecteds, 'leading 0\'s should have been trimmed from NUMBER');
+    test.deepEqual(actual, expecteds, 'leading 0\'s should not have been trimmed from NUMBER');
     test.end();
   });
 
@@ -84,63 +84,5 @@ tape ( 'cleanupStream trims white space in street field', function(test){
     test.equal(records[0].STREET, '34 West 93rd St');
     test.end();
   });
-
-  tape( 'cleanupStream converts all-caps street names to Title Case', function(test){
-    var inputs = [{
-      NUMBER: '88',
-      STREET: 'GLASGOW STREET'
-    },
-    {
-      NUMBER: '76',
-      STREET : 'McCallister Street' //already capitalized street should be unchanged
-    },
-    {
-      NUMBER: '9923736',
-      STREET: 'Macalester Street'//should also be unchanged
-    },
-    {
-      NUMBER: '314',
-      STREET: 'timid street' //should capitalize first letter of each word
-    },
-    {
-      NUMBER: '4',
-      STREET: 'é'
-    },
-    {
-      NUMBER: '9',
-      STREET: '丁目'
-    }];
-    var expecteds = [{
-      NUMBER: '88',
-      STREET: 'Glasgow street'
-    },
-    {
-      NUMBER: '76',
-      STREET : 'McCallister Street' //already capitalized street should be unchanged
-    },
-    {
-      NUMBER: '9923736',
-      STREET: 'Macalester Street'//should also be unchanged
-    },
-    {
-      NUMBER: '314',
-      STREET: 'Timid street' //should capitalize first letter of each word
-    },
-    {
-      NUMBER: '4',
-      STREET: 'É' //should handle non-ASCII characters that can be capitalized
-    },
-    {
-      NUMBER: '9',
-      STREET: '丁目' //should handle non-latin characters
-    }
-    ];
-
-    var cleanupStream = CleanupStream.create();
-
-    test_stream(inputs,cleanupStream,function(err,actual){
-      test.deepEqual(actual, expecteds,'we expect proper capitalization');
-      test.end();
-    });
-  });
 });
+
